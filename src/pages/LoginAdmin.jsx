@@ -37,7 +37,7 @@ const LoginAdmin = () => {
       </div>     
       <input type="email" placeholder='Enter email' className="border borde-b-gray-300 outline-none p-2 mb-4 rounded" required/>
       <input type="password" placeholder='Enter password' className="border border-gray-300 outline-none p-2 mb-4 rounded" required/>
-      <button className="bg-blue-600 hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-xl transition duration-300 ease-in-out">Login</button>
+      <button className="bg-blue-950 flex items-center justify-center gap-5 text-white px-4 py-2  rounded-2xl hover:bg-white hover:border hover:border-black hover:text-black ease-in-out duration-300 ">Login</button>
 
     </div>
   </div>
