@@ -14,18 +14,20 @@ import AddAdv from "../components/AddAdv";
 import { HiOutlineUserAdd } from "react-icons/hi";
 import { FiUsers } from "react-icons/fi";
 const columns = [
-  { field: "id", headerName: "ID", width: 50 },
+  { field: "id", headerName: "ID", width: 50 , sortable:false},
   {
     field: "advId",
     headerName: "Advertisement No",
     width: 150,
     editable: true,
+    sortable:false
   },
   {
     field: "advTitle",
     headerName: "Advertisement title",
     width: 550,
     editable: true,
+    sortable:false
   },
   {
     field: "date",
@@ -33,6 +35,7 @@ const columns = [
     type: "number",
     width: 200,
     editable: false,
+    sortable:false
   },
   {
     field: "nodalOfficers",
@@ -40,12 +43,14 @@ const columns = [
     description: "This column has a value getter and is not sortable.",
     sortable: false,
     width: 120,
+    
   },
 
   {
     field: "action",
     headerName: "Actions",
     width: 200,
+    sortable:false,
     renderCell: (params) => (
       <div className="flex gap-2">
         <button
@@ -250,6 +255,7 @@ const Dashboard = () => {
           disableColumnFilter
           disableDensitySelector
           disableColumnSelector
+          
         />
       </div>
       <AddAdv isOpen={isAddAdvModalOpen} onClose={closeAddAdvModal} />

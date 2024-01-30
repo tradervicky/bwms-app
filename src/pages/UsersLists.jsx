@@ -214,11 +214,11 @@ const USersLists = () => {
         <div className="flex items-center  h-20 bg-[#f0f3f4] mb-4 border mt-2 rounded-lg">
           <div>
             <button
-              onClick={handleAddAdvClick}
+              onClick={()=>navigate('/addusers')}
               className="bg-blue-950 flex items-center justify-center gap-2 text-white px-4 py-2 my-4 mx-4 rounded-2xl hover:bg-white hover:border hover:border-black hover:text-black ease-in-out duration-300 "
             >
-              <MdOutlineAddBox size={24} />
-              Add Adv.
+              <HiOutlineUserAdd size={24} />
+              Add Users.
             </button>
           </div>
           <p onClick={()=>navigate('/userslist')} className="mx-auto text-3xl text-blue-950 font-bold p-shadow">
