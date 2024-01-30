@@ -1,0 +1,21 @@
+/* Styles for WebKit (Chrome, Safari) */
+.scrollbar::-webkit-scrollbar {
+    width: 8px;
+    
+  }
+  
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: hsla(214, 79%, 37%, 0.651); 
+    border-radius: 6px;
+  }
+  
+  .scrollbar::-webkit-scrollbar-track {
+    background-color: #f1f1f1; 
+  }
+  
+  /* Styles for Firefox */
+  .scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #a7a2a2 #f1f1f1; 
+  }
+  
