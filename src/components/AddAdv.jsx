@@ -1,11 +1,50 @@
-import { Button } from "@mui/material";
-import React from "react";
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import ListItemText from '@mui/material/ListItemText';
+import Select from '@mui/material/Select';
+import Checkbox from '@mui/material/Checkbox';
+
+import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { styled } from "@mui/material/styles";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import './addAdv.css'
 import { FaDeleteLeft } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
+import { Button } from '@mui/material';
+
+const ITEM_HEIGHT = 20;
+const ITEM_PADDING_TOP = 4;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      
+      minHeight: ITEM_HEIGHT * 1 ,
+      
+      width: 250,
+    },
+  },
+};
+
+const names = [
+  'Oliver Hansen',
+  'Van Henry',
+  'April Tucker',
+  'Ralph Hubbard',
+  'Omar Alexander',
+  'Carlos Abbott',
+  'Miriam Wagner',
+  'Bradley Wilkerson',
+  'Virginia Andrews',
+  'Kelly Snyder',
+  'Miriam Wagner',
+  'Bradley Wilkerson',
+  'Virginia Andrews',
+  'Kelly Snyder',
+];
+
 const AddAdv = ({ isOpen, onClose }) => {
   const modalClasses = isOpen
     ? "fixed inset-0 flex items-center justify-center z-50"
@@ -25,6 +64,17 @@ const AddAdv = ({ isOpen, onClose }) => {
     width: 1,
   });
 
+  const [personName, setPersonName] = useState([]);
+
+  const handleChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setPersonName(
+      // On autofill we get a stringified value.
+      typeof value === 'string' ? value.split(',') : value,
+    );
+  };
   return (
     <div
       className={`modal ${modalClasses} bg-black bg-opacity-70 backdrop-filter backdrop-blur-sm`}
@@ -66,12 +116,7 @@ const AddAdv = ({ isOpen, onClose }) => {
               </Button>
             </div>
           </div>
-          <input
-            type="file"
-            placeholder="File Upload"
-            className="mb-2 p-2 border rounded-md"
-            onClick={handleInputClick}
-          />
+          
          <div className="border px-4 py-2 rounded">
           <p>Stages</p>
           <ol>
@@ -84,6 +129,41 @@ const AddAdv = ({ isOpen, onClose }) => {
           </div>
           
          </div>
+
+         
+        <select name="" id="" className="border rounded-md outline-none h-12">
+          <option value="">
+            Select Section
+          </option>
+          <option value="it">IT-Section</option>
+          <option value="education">Education</option>
+          <option value="others">Others</option>
+        </select>
+        
+
+        <div className=''>
+      <FormControl sx={{ m: 0, width: 300, height:250 }}>
+        <InputLabel id="demo-multiple-checkbox-label">Assign Nodal Officers</InputLabel>
+        <Select
+          labelId="demo-multiple-checkbox-label"
+          id="demo-multiple-checkbox"
+          multiple
+          value={personName}
+          onChange={handleChange}
+          input={<OutlinedInput label="Assign Nodal Officers" />}
+          renderValue={(selected) => selected.join(', ')}
+          MenuProps={MenuProps}
+        >
+          {names.map((name) => (
+            <MenuItem key={name} value={name}>
+              <Checkbox checked={personName.indexOf(name) > -1} />
+              <ListItemText primary={name} />
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+    </div>
+
          
         
          

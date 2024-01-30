@@ -144,7 +144,7 @@ const rows = [
   },
 ];
 
-const Dashboard = () => {
+const USersLists = () => {
   const navigate = useNavigate();
   const [isAddAdvModalOpen, setIsAddAdvModalOpen] = useState(false);
 
@@ -221,8 +221,8 @@ const Dashboard = () => {
               Add Adv.
             </button>
           </div>
-          <p className="mx-auto text-3xl text-blue-950 font-bold p-shadow">
-            Advertisement Panel
+          <p onClick={()=>navigate('/userslist')} className="mx-auto text-3xl text-blue-950 font-bold p-shadow">
+            Users Lists
           </p>
           
         </div>
@@ -257,4 +257,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default USersLists;

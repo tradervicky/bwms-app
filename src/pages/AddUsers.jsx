@@ -6,6 +6,7 @@ import { MdOutlineSpaceDashboard } from "react-icons/md";
 import { IoIosLogOut } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import "./dashboard.css";
+import { FiUsers } from "react-icons/fi";
 
 const AddUsers = () => {
   const navigate = useNavigate();
@@ -27,6 +28,10 @@ const AddUsers = () => {
             <p className="text-gray-700 flex gap-8 items-center text-lg font-medium cursor-pointer py-2 pl-2 hover:bg-blue-950  hover:text-white hover:rounded-2xl duration-300 ease-in-out">
               <TiUserAddOutline size={28} /> Users
             </p>
+            <p onClick={()=>navigate('/userslist')} className="text-gray-700 flex gap-8 items-center text-lg font-medium cursor-pointer py-2 pl-2 hover:bg-blue-950  hover:text-white hover:rounded-2xl duration-300 ease-in-out">
+              <FiUsers size={28} /> Users List
+            </p>
+            
             <p className="text-gray-700 flex gap-8 items-center text-lg font-medium cursor-pointer py-2 pl-2 hover:bg-blue-950  hover:text-white hover:rounded-2xl duration-300 ease-in-out">
               <GrUserSettings size={28} />
               Role
